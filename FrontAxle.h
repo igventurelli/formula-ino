@@ -2,7 +2,7 @@
 /**
   Servo rotation is limited to 160º
   This is needed because 0º is not actually 0º, but something about 20º
-  So to make it "linear", we need to cut the corner
+  So to make it "linear", we need to cut the other corner
   
   Cheap servo ¯\_(ツ)_/¯
  */
