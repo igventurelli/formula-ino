@@ -4,7 +4,7 @@ Formula Ino is a open-source and open-hardware base project to build a remote co
 
 ## Hardware
 
-![pip](https://raw.githubusercontent.com/igventurelli/formula-ino/master/fritzing/schema.png)
+![schema](https://raw.githubusercontent.com/igventurelli/formula-ino/master/fritzing/schema.png)
 
 The hardware is composed by:
 
