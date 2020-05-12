@@ -1,12 +1,27 @@
+#include "BackAxle.h"
 #include "FrontAxle.h"
 
 void setup() {
-  frontAxleInit();
+  initBackAxle();
+  initFrontAxle();
 }
 
 void loop() {
-  frontAxleMove(-100);
+  move(0);
   delay(1000);
-  frontAxleMove(180);
+  
+  move(160);
+  delay(1000);
+  
+  speedUp(100);
+  delay(1000);
+  
+  reverse(100);
+  delay(1000);
+
+  handBrake();
+  delay(1000);
+
+  neutral();
   delay(1000);
 }

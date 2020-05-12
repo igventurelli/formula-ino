@@ -12,7 +12,7 @@
 
 Servo servo;
 
-void frontAxleInit() {
+void initFrontAxle() {
   servo.attach(9);
   delay(15);
   servo.write(0);
@@ -24,7 +24,7 @@ void _servoWrite(int value) {
   delay(15);
 }
 
-void frontAxleMove(int value) {
+void move(int value) {
   if (value > 160) {
     _servoWrite(160);
     return;
