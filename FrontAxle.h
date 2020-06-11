@@ -1,39 +1,40 @@
-
-/**
-  Servo rotation is limited to 160º
-  This is needed because 0º is not actually 0º, but something about 20º
-  So to make it "linear", we need to cut the other corner
-  
-  Cheap servo ¯\_(ツ)_/¯
- */
-
 #include "Arduino.h"
-#include <Servo.h>
 
-Servo servo;
+const int IN3 = 6;
+const int IN4 = 7;
+
 
 void initFrontAxle() {
-  servo.attach(9);
-  delay(15);
-  servo.write(0);
-  delay(15);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
 }
 
-void _servoWrite(int value) {
-  servo.write(value);
-  delay(15);
+void _toRight() {
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void _toLeft() {
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void _toCenter() {
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 void move(int value) {
-  if (value > 160) {
-    _servoWrite(160);
+
+  if (value >= 137) {
+    _toRight();
     return;
   }
 
-  if (value < 0) {
-    _servoWrite(0);
+  if (value <= 117) {
+    _toLeft();
     return;
   }
 
-  _servoWrite(value);
+  _toCenter();
 }
