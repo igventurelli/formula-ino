@@ -38,26 +38,26 @@ void setup() {
 }
 
 void loop() {
-  Usb.Task();
+ Usb.Task();
 
-  if (PS4.connected()) {
-    
-    move(PS4.getAnalogHat(LeftHatX));
+ if (PS4.connected()) {
+   
+   move(PS4.getAnalogHat(LeftHatX));
 
-    if (PS4.getAnalogButton(R2)) {
-      speedUp(PS4.getAnalogButton(R2));
-    }
+   if (PS4.getAnalogButton(R2)) {
+     speedUp(PS4.getAnalogButton(R2));
+   }
 
-    if (PS4.getAnalogButton(L2)) {
-      reverse(PS4.getAnalogButton(L2));
-    }
+   if (PS4.getAnalogButton(L2)) {
+     reverse(PS4.getAnalogButton(L2));
+   }
 
-    if (PS4.getButtonClick(CIRCLE)) {
-      handBrake();
-    }
-    
-    if (PS4.getButtonClick(PS)) {
-      PS4.disconnect();
-    }
-  }
+   if (PS4.getButtonClick(CIRCLE)) {
+     handBrake();
+   }
+   
+   if (PS4.getButtonClick(PS)) {
+     PS4.disconnect();
+   }
+ }
 }
