@@ -14,6 +14,8 @@ The hardware is composed by:
 - 1x L298N H-Bridge motor driver
 - 2x DC Motor 5v
 
+![working](https://raw.githubusercontent.com/igventurelli/formula-ino/master/fritzing/working.gif)
+
 ## Software
 
 You must import the USB Host Shield library into your Arduino IDE
